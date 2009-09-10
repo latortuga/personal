@@ -36,3 +36,6 @@ filetype indent on
 " Map Control+s to save a file
 nmap <C-s> :w<CR>
 imap <C-s> <ESC>:w<CR>
+
+" Map search for word under cursor to F4
+map <F4> :execute "noautocmd vimgrep /" . expand("<cword>") . "/j **/*.js **/*.xul **/*.xml **/*.css" <Bar> cw<CR>
