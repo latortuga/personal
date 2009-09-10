@@ -1,8 +1,8 @@
 colorscheme desert
-set guifont=Consolas:h10:cANSI
+set guifont=Consolas:h11:cANSI
 
-set lines=60
-set columns=205 
+set lines=50
+set columns=180 
 
 syntax on
 set smartindent
@@ -32,3 +32,7 @@ set guioptions-=T
 filetype on
 filetype plugin on
 filetype indent on
+
+" Map Control+s to save a file
+nmap <C-s> :w<CR>
+imap <C-s> <ESC>:w<CR>
