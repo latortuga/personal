@@ -1,10 +1,10 @@
-colorscheme desert
 set guifont=Consolas:h11:cANSI
 
 set lines=50
 set columns=180 
 
 syntax on
+colorscheme desertdrew
 set smartindent
 set shiftwidth=4
 set tabstop=4
