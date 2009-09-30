@@ -6,6 +6,7 @@ set columns=180
 syntax on
 colorscheme desertdrew
 set smartindent
+set autoindent
 set shiftwidth=4
 set tabstop=4
 set expandtab
@@ -31,7 +32,6 @@ set guioptions-=T
 
 filetype on
 filetype plugin on
-filetype indent on
 
 " Map Control+s to save a file
 nmap <C-s> :w<CR>
@@ -39,3 +39,11 @@ imap <C-s> <ESC>:w<CR>
 
 " Map search for word under cursor to F4
 map <F4> :execute "noautocmd vimgrep /" . expand("<cword>") . "/j **/*.js **/*.xul **/*.xml **/*.css" <Bar> cw<CR>
+
+" Code folding set to fold around indent and do so on file open
+set foldmethod=indent
+set foldlevel=4
+
+au BufWinLeave * silent! mkview
+au BufWinEnter * silent! loadview
+
