@@ -38,6 +38,8 @@ set backupdir=~/vimtmp
 set backspace=indent,eol,start " In insert mode, backspace over everything
 set foldmethod=indent " Code folding set to fold around indent and do so on file open
 set foldlevel=100
+set nobackup " get rid of temp files!
+set nowritebackup
 
 filetype on
 filetype plugin on
@@ -74,7 +76,7 @@ au BufWinEnter * silent! loadview
 
 " if current working directory is my home folder, take me to svn
 if getcwd() == "C:\\Users\\Drew"
-    cd Documents\svn\
+    cd unabridged software\
 endif
 
 " turn on spell check for some files
