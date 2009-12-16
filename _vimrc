@@ -34,7 +34,6 @@ set scrolloff=3 " Jump 3 lines before the end of a screen
 set visualbell " don't beep at me all the time, vim!
 set wildmenu " show all available commands when hitting tab
 set wildmode=list:longest " tab complete to point of ambiguity
-set backupdir=~/vimtmp
 set backspace=indent,eol,start " In insert mode, backspace over everything
 set foldmethod=indent " Code folding set to fold around indent and do so on file open
 set foldlevel=100
