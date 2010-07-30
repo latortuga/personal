@@ -39,6 +39,8 @@ set foldmethod=indent " Code folding set to fold around indent and do so on file
 set foldlevel=100
 set nobackup " get rid of temp files!
 set nowritebackup
+set noswapfile
+set nospell
 
 filetype on
 filetype plugin on
@@ -56,6 +58,7 @@ let g:fuzzy_matching_limit = 70
 
 map <C-T> :FuzzyFinderTextMate<CR>
 map <M-b> :FuzzyFinderBuffer<CR>
+map <Leader>b :FuzzyFinderBuffer<CR>
 
 " Map Control+s to save a file
 nmap <C-s> :w<CR>
@@ -68,15 +71,25 @@ nnoremap <F1> :let @/ = ""<CR>
 map <F4> :execute "noautocmd vimgrep /" . expand("<cword>") . "/j **/*.js **/*.xul **/*.xml **/*.css" <Bar> cw<CR>
 " Search for word selected by visual using F5
 vnoremap <F5> y:execute "noautocmd vimgrep /" . escape(@", '\\/') . "/j **/*.js **/*.xul **/*.xml **/*.css" <Bar> cw<CR>
-vnoremap <F6> y:execute "noautocmd vimgrep /" . escape(@", '\\/') . "/j app/**/*.rb app/**/*.rhtml" <Bar> cw<CR>
+vnoremap <F6> y:execute "noautocmd vimgrep /" . escape(@", '\\/') . "/j app/**/*.rb app/**/*.rhtml app/**/*.erb" <Bar> cw<CR>
+
+" gj and gk use lines on screen instead of logical lines
+" meaning they don't skip word wrapped lines
+nmap j gj
+nmap k gk
 
 au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
 
 " if current working directory is my home folder, take me to svn
 if getcwd() == "C:\\Users\\Drew"
-    cd unabridged software\
+    cd Documents\svn
+endif
+
+" if current working directory is windows system32 take me to svn too!
+if getcwd() == "C:\\WINDOWS\\system32"
+    cd C:\Users\Drew\Documents\svn
 endif
 
 " turn on spell check for some files
-autocmd BufNewFile,BufRead *.txt,*.html,README,*.textile set spell
+"autocmd BufNewFile,BufRead *.txt,*.html,README,*.textile set spell
