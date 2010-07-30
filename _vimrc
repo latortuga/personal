@@ -53,16 +53,8 @@ nnoremap ` '
 " change <Leader> to comma, from backslash
 let mapleader = ","
 
-let g:fuzzy_ignore = "*.svn"
-let g:fuzzy_ignore = "*.log"
-let g:fuzzy_ignore = "*.dat"
-let g:fuzzy_ignore = "*.al3"
-let g:fuzzy_ignore = "*.AL3"
-let g:fuzzy_ignore = "*.jpg"
-let g:fuzzy_ignore = "*.png"
-let g:fuzzy_ignore = "*.svg"
-let g:fuzzy_ignore = "*.gif"
-let g:fuzzy_matching_limit = 70
+let g:fuzzy_ignore = "*.svn,*.log,*.dat,*.al3,*.jpg,*.png,*.svg,*.gif"
+let g:fuzzy_matching_limit = 80
 
 map <C-T> :FuzzyFinderTextMate<CR>
 map <M-b> :FuzzyFinderBuffer<CR>
@@ -101,3 +93,7 @@ endif
 
 " turn on spell check for some files
 "autocmd BufNewFile,BufRead *.txt,*.html,README,*.textile set spell
+
+" This was an attempt to limit the fuzzy finder to specific directories
+" on keypress but it's too fragile and annoying to press it every time.
+"map #9 :let g:fuzzy_roots = ['semcat','test','backend']<CR>
