@@ -53,7 +53,15 @@ nnoremap ` '
 " change <Leader> to comma, from backslash
 let mapleader = ","
 
+let g:fuzzy_ignore = "*.svn"
 let g:fuzzy_ignore = "*.log"
+let g:fuzzy_ignore = "*.dat"
+let g:fuzzy_ignore = "*.al3"
+let g:fuzzy_ignore = "*.AL3"
+let g:fuzzy_ignore = "*.jpg"
+let g:fuzzy_ignore = "*.png"
+let g:fuzzy_ignore = "*.svg"
+let g:fuzzy_ignore = "*.gif"
 let g:fuzzy_matching_limit = 70
 
 map <C-T> :FuzzyFinderTextMate<CR>
